@@ -1,39 +1,33 @@
-var mysql      = require('mysql');
-
-var Sql = require("./connection.js")
-
-Sql(mysql);
-
-module.exports = {
 
 
-	selectAll: function(connection) {
+var connection = require('./connection.js')
 
 
-			// app.get('/', function(req,res) {
-			   connection.query('SELECT * FROM burgers;', function(err, data) {
-			      if (err) throw err;
+var orm = {
 
-			      console.log(data);
-			      // console.log(res);
-			      console.log("working");
+		selectAll: function (whatToSelect, table, cb) {
+		var queryString = 'SELECT ' + whatToSelect + ' FROM ' + table;
+		console.log(queryString);
+		connection.query(queryString, function (err, result) {
+			cb(result);
+		});
+	}
+	// selectAll: function(tableInput, colToSearch, valOfCol) {
+	// 	var queryString = 'SELECT * FROM' + tableInput + 'WHERE' + colToSearch + ' =?';
+	// 	// app.get('/', function(req,res) {
+	// 	connection.query(queryString, [valOfCol], function(err, data) {
+	// 		console.log(data)
+	// 		console.log(queryString)
+	// 			// if (err) throw err;
+	// 			// 	console.log( data );
+	// 		    // console.log(res);
+	// 		    // console.log( "working" );
+	// 		      // res.render('index', {plans: data});
+	// 	});
 
-			      // res.render('index', {plans: data});
-
-			    });
-
-			// });
-
- 	}
-
-// 	// insertOne: function () {
-		
-// 	// },
-
-// 	// updateOne: function () {
-		
-// 	// }
+	
+	// }
 
 };
 
-
+module.exports = orm;
