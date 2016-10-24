@@ -1,3 +1,44 @@
 body {
-	color: #8B7355;
+	background-image: url("../img/burgerbackground.jpg");
+	color: white;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	padding: 20px;
+	color: ivory;
+
+}
+
+h1 {
+	font-size: 70px;
+	text-align: center;
+	background: rgba(35,25,10,.9);
+	padding: 15px;
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 20px;
+	border: 2px groove black;
+
+}
+.burgerDivs {
+	background: rgba(35,25,10,.9);
+	padding: 20px;
+	border: 2px groove black;
+	border-radius: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center
+
+}
+#burgerAva {
+	float: left;
+	list-style-type: inline;
+}
+
+#burgerAda{
+	float: right;
+	width: 20%;
+	height: 310px;
+}
+
+#burgersOutta {
+	clear: both;
 }
