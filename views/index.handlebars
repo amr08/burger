@@ -3,7 +3,7 @@
 <h1>A's Burger Joint</h1>
 
 <div class="burgerDivs" id="burgerAva">
-<h2>Burgers available to eat!</h2>
+<h2>Burgers Available Today</h2>
 
 <ul>
   {{#each burgers}}
@@ -13,7 +13,7 @@
 
         <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
-          <button type="submit">Devour it</button>
+          <button type="submit">Order it!</button>
         </form>
 
       
@@ -38,7 +38,7 @@
 </div>
 
 <div class="burgerDivs" id="burgersOutta">
-<h2>Burgers 86...Aw</h2>
+<h2>Burgers 86</h2>
 
 <ol>
   {{#each burgers}}

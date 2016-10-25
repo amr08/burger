@@ -19,7 +19,7 @@ h1 {
 .burgerDivs {
 	background: rgba(35,25,10,.6);
 	padding: 20px;
-	border: 2px groove black;
+	border: 1px groove black;
 	border-radius: 20px;
 	margin-top: 20px;
 	margin-bottom: 20px;
