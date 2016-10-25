@@ -1,58 +1,57 @@
 
 
-<h1>A's Burger Joint</h1>
+  <h1>A's Burger Joint</h1>
 
-<div class="burgerDivs" id="burgerAva">
-<h2>Burgers Available Today</h2>
+  <div class="burgerDivs" id="burgerAva">
 
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li>
-        {{this.burger_name}}
+    <h2>Burgers Available Today</h2>
 
-        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button type="submit">Order it!</button>
-        </form>
+    <ul>
+      {{#each burgers}}
+        {{#unless this.devoured}}
+          <li>
+            {{this.burger_name}}
+            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="true">
+              <button type="submit">Order it!</button>
+            </form>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
 
-      
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-</div>
-
-<div class="burgerDivs" id="burgerAda">
-<h2>Add a Burger</h2>
-<form class="create-update-form" action="burgers/create" method="POST">
-
-  <div class="form-group">
-    <textarea type="text" name="burger_name"></textarea>
-   <button type="submit">Add Burger</button>
   </div>
 
+  <div class="burgerDivs" id="burgerAda">
 
-</form>
-</div>
+    <h2>Add a Burger</h2>
 
-<div class="burgerDivs" id="burgersOutta">
-<h2>Burgers 86</h2>
+    <form class="create-update-form" action="burgers/create" method="POST">
 
-<ol>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>
-        {{this.burger_name}}
+      <div class="form-group">
+        <textarea type="text" name="burger_name"></textarea>
+        <button type="submit">Add Burger</button>
+      </div>
 
-        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="false">
-        </form>
-      </li>
-    {{/if}}
-  {{/each}}
-</ol>
+    </form>
 
-</div>
+  </div>
+
+  <div class="burgerDivs" id="burgersOutta">
+    <h2>Burgers 86</h2>
+
+    <ol>
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li>
+            {{this.burger_name}}
+            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="false">
+            </form>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ol>
+
+  </div>
 
