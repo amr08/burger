@@ -76,3 +76,7 @@ button {
 	margin: 0 auto;
 }
 
+#burgersOutta li {
+	list-style-type: none;
+}
+
